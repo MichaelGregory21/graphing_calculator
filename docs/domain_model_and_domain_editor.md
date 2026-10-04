@@ -69,9 +69,9 @@ $$
 Multiple intervals are separated by |:
 
 $$
--\infty < \overset{R}{x} \leq 2
+-\infty < \overset{R}{x} \leq 2 \rightarrow
 ;|;
-2 < \overset{R}{x} \leq \frac{x^2}{3}
+\leftarrow 2 < \overset{R}{x} \leq \frac{x^2}{3} \rightarrow
 $$
 
 The expression editor's mathematical formatting algorithm is used to display bounds.
@@ -87,15 +87,15 @@ A bound may contain any valid expression, including variables and function calls
 Examples include:
 
 $$
-0 < \overset{R}{x} < a
+\leftarrow 0 < \overset{R}{x} < a \rightarrow
 $$
 
 $$
-0 < \overset{R}{x} < \sin(x+1)
+\leftarrow 0 < \overset{R}{x} < \sin(x+1) \rightarrow
 $$
 
 $$
-0 < \overset{R}{x} < \frac{1}{x}
+\leftarrow 0 < \overset{R}{x} < \frac{1}{x} \rightarrow
 $$
 
 The bound is stored as an expression rather than as formatted text.
@@ -140,13 +140,13 @@ $$
 The user can set the lower bound to 2 while keeping it strict:
 
 $$
-2 < \overset{R}{x} < \infty
+\leftarrow 2 < \overset{R}{x} < \infty
 $$
 
 The upper bound can then be changed independently. For example, setting it to x²/3 with an inclusive endpoint produces:
 
 $$
-2 < \overset{R}{x} \leq \frac{x^2}{3}
+\leftarrow 2 < \overset{R}{x} \leq \frac{x^2}{3} \rightarrow
 $$
 
 ## Multiple Intervals
@@ -158,15 +158,15 @@ Adding an interval automatically creates a boundary adjacent to the existing int
 For example:
 
 $$
-2 < \overset{R}{x} \leq \frac{x^2}{3}
+\leftarrow 2 < \overset{R}{x} \leq \frac{x^2}{3} \rightarrow
 $$
 
 can be extended using the left arrow to produce:
 
 $$
--\infty < \overset{R}{x} \leq 2
+-\infty < \overset{R}{x} \leq 2 \rightarrow
 ;|;
-2 < \overset{R}{x} \leq \frac{x^2}{3}
+\leftarrow 2 < \overset{R}{x} \leq \frac{x^2}{3} \rightarrow
 $$
 
 The new interval initially uses the existing lower boundary as its upper boundary, with opposite strictness.
@@ -192,13 +192,13 @@ The selected set determines which values within the specified intervals belong t
 For example:
 
 $$
-0 \leq \overset{Z}{x} \leq 10
+\leftarrow 0 \leq \overset{Z}{x} \leq 10 \rightarrow
 $$
 
 contains only the integers from 0 through 10, while:
 
 $$
-0 \leq \overset{R}{x} \leq 10
+\leftarrow 0 \leq \overset{R}{x} \leq 10 \rightarrow
 $$
 
 contains every real value in that interval.
