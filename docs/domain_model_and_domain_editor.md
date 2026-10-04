@@ -66,7 +66,7 @@ $$
 -\infty < \overset{R}{x} < \infty
 $$
 
-Multiple intervals are separated by |:
+Multiple intervals are separated by |\:
 
 $$
 -\infty < \overset{R}{x} \leq 2 \rightarrow
