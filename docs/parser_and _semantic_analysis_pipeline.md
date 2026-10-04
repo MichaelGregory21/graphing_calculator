@@ -105,7 +105,7 @@ sin{}
 
 The parser therefore creates an empty child expression rather than treating it as a syntax error.
 
-Note that the user entering { or } is interpreted as \{ or \} respectively, creating a piecewise defined function. In this way, the user cannot artificially navigate layers.
+User-entered { and } are interpreted as literal mathematical braces, representing piecewise syntax. They cannot be used to artificially navigate expression layers.
 
 ## Parentheses
 
