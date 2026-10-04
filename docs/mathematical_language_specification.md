@@ -151,6 +151,13 @@ Intervals are separated in the domain editor. Overlapping intervals are merged.
 
 Q and R use the same underlying numerical representation, but their mathematical interpretation affects symbolic presentation where applicable.
 
+Additionally, the user may use the "if" keyword to specify simple domain in text.
+
+For example:
+x if x < 4
+
+creates the linear identity function strictly bounded above by 4
+
 ## Undefined Values
 
 Expressions may be undefined at particular inputs without being invalid expressions.
