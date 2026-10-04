@@ -66,11 +66,11 @@ $$
 -\infty < \overset{R}{x} < \infty
 $$
 
-Multiple intervals are separated by |\:
+Multiple intervals are separated by |:
 
 $$
 -\infty < \overset{R}{x} \leq 2 \rightarrow
-;|;
+\;|\;
 \leftarrow 2 < \overset{R}{x} \leq \frac{x^2}{3} \rightarrow
 $$
 
@@ -165,7 +165,7 @@ can be extended using the left arrow to produce:
 
 $$
 -\infty < \overset{R}{x} \leq 2 \rightarrow
-;|;
+\;|\;
 \leftarrow 2 < \overset{R}{x} \leq \frac{x^2}{3} \rightarrow
 $$
 
