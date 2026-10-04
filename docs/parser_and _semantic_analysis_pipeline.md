@@ -4,17 +4,7 @@
 
 The language-processing pipeline is:
 
-source
-  ↓
-lexer
-  ↓
-parser
-  ↓
-expression tree
-  ↓
-semantic analysis
-  ↓
-resolved model
+source -> lexer -> parser -> expression tree -> semantic analysis -> resolved model
 
 Parsing determines structure. Semantic analysis determines whether that structure is valid and resolves its meaning.
 
@@ -72,6 +62,7 @@ The parser handles:
  - unary operators
  - multiplication and division
  - addition and subtraction
+ - parentheses and braces
  - comparisons
  - declarations
 
@@ -113,6 +104,8 @@ An empty layer is valid editor state:
 sin{}
 
 The parser therefore creates an empty child expression rather than treating it as a syntax error.
+
+Note that the user entering { or } is interpreted as \{ or \} respectively, creating a piecewise defined function. In this way, the user cannot artificially navigate layers.
 
 ## Parentheses
 
