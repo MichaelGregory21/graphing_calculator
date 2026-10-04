@@ -15,7 +15,7 @@ Intervals are combined as a union.
 For example:
 
 $$
-2 < \overset{R}{x} \leq \frac{x^2}{3}
+\left 2 < \overset{R}{x} \leq \frac{x^2}{3} \right
 $$
 
 represents the real values of x satisfying both bounds.
