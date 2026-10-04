@@ -181,11 +181,11 @@ Clicking the number-set label above a variable opens a selection popup.
 
 The available sets are:
 
-N — natural numbers, including zero
-Z — integers
-nZ, nN — integer ideals for input n
-Q — rational numbers
-R — real numbers
+- N — natural numbers, including zero
+- Z — integers
+- nZ, nN — integer ideals for input n
+- Q — rational numbers
+- R — real numbers
 
 The selected set determines which values within the specified intervals belong to the domain.
 
