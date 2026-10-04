@@ -15,3 +15,39 @@ Expressions can represent ordinary functions, equations, inequalities, variables
 The application maintains a live mathematical environment. Changes to variables or function definitions automatically propagate to dependent expressions and graphs.
 
 The central design principle is: **The user describes the mathematics; the application determines how it can be represented and visualized.**
+
+When interpretation is genuinely impossible, the application should provide a precise and localized error rather than silently producing an unexpected result.
+
+## Primary Goals
+
+### 1. High-quality graphing
+The graphing engine should produce smooth, visually polished mathematical graphs across arbitrary zoom levels.
+
+It must handle:
+ - Explicit functions
+ - Implicit equations
+ - Inequalities
+ - Multiple simultaneous graphs
+ - Piecewise functions
+ - Restricted domains
+ - Discrete domains
+ - Roots and intersections
+ - Interactive points on graphs
+
+Discontinuities and undefined values are particularly important. Expressions such as 1/x, sqrt(x), and log(x) should naturally produce gaps in their graphs rather than erroneous connecting lines.
+
+### 2. Expressive mathematical input
+The calculator should support natural mathematical notation without requiring users to learn a programming language.
+
+Examples include:
+ - juxtapositional multiplication
+ - fractions
+ - radicals
+ - exponents
+ - subscripts
+ - standard mathematical functions
+ - piecewise definitions
+ - domain restrictions
+
+The input editor should transform ordinary typed input into properly rendered mathematical notation as the user types.
+
