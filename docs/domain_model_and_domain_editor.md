@@ -26,19 +26,19 @@ A domain does not change the mathematical expression itself. It restricts the va
 
 The default domain for a variable is:
 
-[
+$$
 -\infty < \overset{R}{x} < \infty
-]
+$$
 
-with number set R.
+with number set $\mathbb R$.
 
 A function with several variables has this default domain independently for every variable:
 
-[
+$$
 -\infty < \overset{R}{x} < \infty
 \qquad
 -\infty < \overset{R}{a} < \infty
-]
+$$
 
 The default domain is intentionally broad. Built-in functions such as sqrt and log do not automatically change the displayed domain when their mathematical definition is restricted.
 
@@ -62,17 +62,17 @@ When a variable is added to an expression and the expression is confirmed, that 
 
 The domain editor displays each variable using its selected number set as an overset:
 
-[
+$$
 -\infty < \overset{R}{x} < \infty
-]
+$$
 
 Multiple intervals are separated by |:
 
-[
+$$
 -\infty < \overset{R}{x} \leq 2
 ;|;
 2 < \overset{R}{x} \leq \frac{x^2}{3}
-]
+$$
 
 The expression editor's mathematical formatting algorithm is used to display bounds.
 
@@ -86,17 +86,17 @@ A bound may contain any valid expression, including variables and function calls
 
 Examples include:
 
-[
+$$
 0 < \overset{R}{x} < a
-]
+$$
 
-[
+$$
 0 < \overset{R}{x} < \sin(x+1)
-]
+$$
 
-[
+$$
 0 < \overset{R}{x} < \frac{1}{x}
-]
+$$
 
 The bound is stored as an expression rather than as formatted text.
 
@@ -133,23 +133,23 @@ If the user later disables unbounded, the previously entered expression is resto
 
 Suppose the initial domain is:
 
-[
+$$
 -\infty < \overset{R}{x} < \infty
-]
+$$
 
 The user can set the lower bound to 2 while keeping it strict:
 
-[
+$$
 2 < \overset{R}{x} < \infty
-]
+$$
 
 The upper bound can then be changed independently. For example, setting it to x²/3 with an inclusive endpoint produces:
 
-[
+$$
 2 < \overset{R}{x} \leq \frac{x^2}{3}
-]
+$$
 
-8. Multiple Intervals
+## Multiple Intervals
 
 The arrows at either end of a domain allow additional intervals to be appended.
 
@@ -157,17 +157,17 @@ Adding an interval automatically creates a boundary adjacent to the existing int
 
 For example:
 
-[
+$$
 2 < \overset{R}{x} \leq \frac{x^2}{3}
-]
+$$
 
 can be extended using the left arrow to produce:
 
-[
+$$
 -\infty < \overset{R}{x} \leq 2
 ;|;
 2 < \overset{R}{x} \leq \frac{x^2}{3}
-]
+$$
 
 The new interval initially uses the existing lower boundary as its upper boundary, with opposite strictness.
 
@@ -175,7 +175,7 @@ The user can then edit the new interval normally.
 
 The | symbol represents the union of the intervals.
 
-9. Number Sets
+## Number Sets
 
 Clicking the number-set label above a variable opens a selection popup.
 
@@ -183,6 +183,7 @@ The available sets are:
 
 N — natural numbers, including zero
 Z — integers
+nZ, nN — integer ideals for input n
 Q — rational numbers
 R — real numbers
 
@@ -190,19 +191,19 @@ The selected set determines which values within the specified intervals belong t
 
 For example:
 
-[
+$$
 0 \leq \overset{Z}{x} \leq 10
-]
+$$
 
 contains only the integers from 0 through 10, while:
 
-[
+$$
 0 \leq \overset{R}{x} \leq 10
-]
+$$
 
 contains every real value in that interval.
 
-10. Graphing Behavior
+## Graphing Behavior
 
 When a domain is specified for a graphable expression, the graph is evaluated only over the values permitted by that domain.
 
@@ -218,9 +219,9 @@ sqrt(x)
 
 remains:
 
-[
+$$
 -\infty < \overset{R}{x} < \infty
-]
+$$
 
 but negative values do not produce graph points because sqrt(x) is undefined there.
 
@@ -229,5 +230,7 @@ Likewise, the default domain of:
 log(x)
 
 remains unrestricted in the domain editor, while non-positive values produce no graph points because the numerical evaluation is undefined.
+
+This keeps the domain feature optional: users who do not need explicit domain control can rely on ordinary numerical behavior, while users who need precise restrictions can configure them explicitly.
 
 This keeps the domain feature optional: users who do not need explicit domain control can rely on ordinary numerical behavior, while users who need precise restrictions can configure them explicitly.
