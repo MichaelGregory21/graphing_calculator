@@ -31,21 +31,33 @@ Sets are unordered and do not contain duplicate elements:
 ### Set Builder Notation
 The general form is 
 
-`{x in A : P(X)}`
+`{a in A : P(a)}`
 
-where `x` is a local set-builder variable, `A` is the source set, and `P(x)` is a Boolean condition on `x`. This gives the set of elements in `A` that satisfy `P`, i.e., where `P` is true. 
+where `a` is a local set-builder variable, `A` is the source set, and `P(a)` is a condition with `a` as a free variable. This gives the set of elements in `A` that satisfy `P`, i.e., where `P` is true. 
 
 For example:
 
 `{x in R : x^2 > 10}`
 
-is the set of real numbers whose square is greater than 10. Note that the source set may be omitted and by default, this role is played by R:
+is the set of real numbers whose square is greater than 10. 
+
+If the number of free variables in a condition exceeds one, then the source set must contain tuples whose cardinality matches the number of free variables in the condition. For example:
+`{(x,y) in R^2 : x + y < 0}`
+
+is acceptable but
+`{x in R : x = 2a}`
+
+is not. (given that `a` is free in the condition `x = 2a`).
+
+The source set may be omitted and by default, this role is played by R:
 
 `{x < 0}`.
 
 is equivalent to
 
 `{x in R : x < 0}`.
+
+Note that `x` may be used locally in set builder notation and is distinct from the dependent variable in the context of the graph. That is, `{x in A : P(x)}` does not attempt to plot anything.
 
 ### Ellipses
 Ellipses may describe recognizable sequences:
@@ -61,6 +73,8 @@ The following are the built in set operations:
 - `A - B`, the set of elements in `A` but not in `B`
 
 The keywords `cup` and `cap` are rendered as `∪` and `∩`, respectively.
+
+The set operations for this system require that the operands must be of the same type. For example, `R cup R^2` raises an error but `R - 2N` does not.
 
 ## 3. Membership
 Membership is an ordinary Boolean expression:
