@@ -14,9 +14,9 @@ The six built-in relations are separated into three classes:
 3. Membership `in`
 
 These relation symbols separate expressions called *components*. For example:
-- x^2 + 1 = 3
-- 4 < 2
-- a in {1, 2}
+- `x^2 + 1 = 3`
+- `4 < 2`
+- `a in {1, 2}`
 
 We can specify the components as *left* and *right* components. Note that the second example is `false` while the first and third examples depend on the values for `x` and `a`, respectively.
 
@@ -118,10 +118,10 @@ Parentheses may be used to define specific ordering on connectives or make condi
 
 ## 3. Free Variables
 
-Free variables are unknown values in a condition and their value may determine the value of a condition. For example, `x in 2N` is `true` only when `x` is an even, non-negative number. It is worth noting that, without free variables, conditions are largely useless as a concept within this project as they would otherwise form tautologies or contradictions everywhere. On the contrary, free variables allow the value of the condition to vary over a particular range of elements.
+Free variables are unknown values in a condition and their value may determine the value of a condition. For example, `x in 2N` is `true` only when `x` is an even, non-negative number. It is worth noting that, without free variables, conditions are largely useless as a concept within this system as they would only form tautologies or contradictions. On the contrary, free variables allow the value of the condition to vary over a particular range of elements.
 
 ### Dependent Variable
-A free variable may be the dependent variable, i.e., `x`, in which case, a resulting expression may attempt to plot all points (if any) that satisfy the given condition. For example: `x^2 if x > 0` plots the right half of a parabola.
+A free variable may be the dependent variable, i.e., `x`, in which case, a resulting expression may attempt to plot all points (if any) that satisfy the given condition. For example: `x^2 if x > 0` plots the right half of a parabola. Note that in the context of a set, `x` no longer denotes the dependent variable, and is instead, treated locally in that set.
 
 ### User-Defined Variable
 A free variable may also be a user-defined variable. For example,
