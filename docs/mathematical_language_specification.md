@@ -63,7 +63,7 @@ Set operations use:
  - `∩` for intersection
  - `∪` for union
  - `-` for set difference
- - `*` for Cartesian product
+ - `*` or justaposition for Cartesian product
  - `^` for finite Cartesian powers
  - juxtaposition for scalar multiplication where the left operand is a scalar and the right operand is a set
 
