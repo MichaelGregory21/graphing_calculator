@@ -379,10 +379,7 @@ Equations use `=`.
 
 Supported inequalities are:
 
-<
-<=
->
->=
+`<`, `<=`, `>`, `>=`
 
 Inequalities may be graphed as regions.
 
