@@ -311,12 +311,7 @@ It may contain:
 
 Supported comparison operators are:
 
-=
-<
-<=
->
->=
-in
+`=`, `<`, `<=`, `>`, `>=`, `in`
 
 For example:
 
