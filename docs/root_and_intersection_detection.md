@@ -9,13 +9,14 @@ It must support:
 - roots of ordinary functions;
 - intersections between ordinary functions;
 - roots of expressions represented as implicit equations where practical;
-- numerical coordinates suitable for trace and point displays.
+- numerical coordinates suitable for trace and point displays;
+- graph restrictions expressed through conditional expressions and sets.
 
 Detection is numerical and does not perform symbolic solving.
 
 ## Root Detection
 
-For
+For:
 
 $$
 f(x)=0,
@@ -23,19 +24,54 @@ $$
 
 the initial algorithm should combine **interval sampling** with a **bracketing root solver**.
 
-The visible/domain interval is sampled to identify candidate intervals where:
+The visible coordinate interval is sampled to identify candidate intervals where:
 
 - the function changes sign;
 - a sampled value is sufficiently close to zero;
-- a discontinuity or sharp feature suggests that additional subdivision is necessary.
+- a discontinuity or sharp feature suggests that additional subdivision is necessary;
+- the applicable conditional/set restriction changes.
 
 Sign-changing intervals are refined using **Brent's method** or a comparable bracketed method.
 
-Bracketed methods are preferred because they are substantially more robust than relying exclusively on Newton's method.
+Only inputs for which the expression is applicable and numerically defined are considered valid root candidates.
+
+## Restricted Roots
+
+A function may be restricted using an `if` expression:
+
+$$
+f(x)=x^2-1\text{ if }x\in A.
+$$
+
+A root outside `A` is not a root of the graphable restricted expression.
+
+For example:
+
+$$
+x^2-1\text{ if }x\in\{x\in R:x>0\}
+$$
+
+contains the root `x = 1`, but not `x = -1`.
+
+The root detector must therefore respect the expression's resolved condition rather than consulting separate domain metadata.
+
+## Discrete Restrictions
+
+A restricted expression may use a discrete set:
+
+$$
+x^2-4\text{ if }x\in N.
+$$
+
+The root detector must recognize that only natural-number inputs are applicable.
+
+In this example, `x = 2` is a valid root while `x = -2` is not part of the graph.
+
+Root detection for discrete sets should inspect applicable set elements rather than assuming that the function is defined continuously between them.
 
 ## Tangential Roots
 
-A root does not necessarily produce a sign change. For example,
+A root does not necessarily produce a sign change. For example:
 
 $$
 f(x)=x^2
@@ -49,19 +85,19 @@ This detection is inherently heuristic and must operate within a computational b
 
 ## Function Intersections
 
-To find intersections of
+To find intersections of:
 
 $$
 f(x)
 $$
 
-and
+and:
 
 $$
 g(x),
 $$
 
-the system instead solves
+the system instead solves:
 
 $$
 h(x)=f(x)-g(x)=0.
@@ -69,13 +105,15 @@ $$
 
 The same root-detection algorithm can then be reused.
 
-The resulting coordinate is
+The resulting coordinate is:
 
 $$
 (x,f(x)).
 $$
 
 Undefined values in either function invalidate the candidate.
+
+Both functions' conditional restrictions must be satisfied for the intersection to be valid.
 
 ## Implicit Intersections
 
@@ -89,7 +127,7 @@ Detected roots and intersections are refined until their numerical error is belo
 
 Multiple detections representing the same point must be merged using a numerical tolerance.
 
-Results should be returned in coordinate order and limited to the visible/domain region relevant to the current graph.
+Results should be returned in coordinate order and limited to the visible region and applicable mathematical restrictions relevant to the current graph.
 
 ## Interaction
 
@@ -97,4 +135,14 @@ Root and intersection detection should be performed on demand rather than contin
 
 The interaction layer may request nearby roots or intersections when the user interacts with a graph.
 
-Detection must respect the expression's domain and treat numerically undefined points as gaps rather than valid results.
+Detection must respect conditional expressions and set membership.
+
+A numerically undefined point is not a valid root or intersection, even if the input satisfies the graph's set restriction.
+
+## Computational Limits
+
+Root and intersection detection must operate under finite computational budgets.
+
+Set membership, adaptive subdivision, and root refinement may all require numerical work.
+
+If a candidate cannot be resolved within the available budget, the detector should discard or mark the candidate as unresolved rather than blocking the application indefinitely.
