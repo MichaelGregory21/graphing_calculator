@@ -1,5 +1,7 @@
 # Piecewise Functions
 
+Piecewise functions are a type of function whose definition depends on a prioritized list of conditions.
+
 ## 1. Piecewise Syntax
 
 A piecewise expression is written using braces containing one or more conditional branches:
