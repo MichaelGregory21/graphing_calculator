@@ -147,11 +147,7 @@ The parser determines whether a brace expression represents a finite set, set-bu
 
 The parser recognizes:
 
-∩
-∪
--
-*
-^
+`∩` `∪` `-` `*` `^`
 
 as potential set operators.
 
