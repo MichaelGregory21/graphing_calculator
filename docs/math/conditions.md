@@ -22,9 +22,26 @@ Note that the second example is `false` while the first and third examples depen
 
 ### Equality
 
-Equality is the most basic relation which evaluates to `true` only when both components are, by definition, the same
+Equality is the most basic relation which evaluates to `true` only when both components are, by definition, the same. For example:
+- `3 = 3`
+- `{1, 2} = {1, 2, 2}`
+- `2 in N`
 
-## Separators (if, :)
+All always evaluate to true, while
+- `f(x) = 4`
+- `(x, 3) = (2, 3)`
+- `x > -10`
+
+depend on the free variable `x`, and
+- `1 = 5`
+- `pi in Q`
+- `2 < 0`
+
+are always false.
+
+## 2. Free Variables
+
+## 3. Separators (if, :)
 
 
 
