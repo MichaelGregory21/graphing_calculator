@@ -96,9 +96,20 @@ The Cartesian power is defined on natural numbers inductively:
 - `A^0 = {}`
 - `A^n = A * A^{n+1}`
 
-Sets can also have real scalar products, generally denoted nA. For example:
-- `3{1, 2, 3} = {3, 6, 9}`
+Sets can also have scalar products, generally denoted nA. For example:
+- `3 * {1, 2, 3} = {3, 6, 9}`
 - `2Z = {x in Z : x/2 in Z}` (The set of even integers)
+
+Finally, sets may have constants added to them. For example:
+- `{1, 2, 3} + 1 = {2, 3, 4}`
+- `2Z + 1 = {x in Z : x - 1 in 2Z}` (The set of odd integers)
+- `N - 1 = N cup {-1}`
+
+Note that scalars must be of a valid type to be added to or multiplied by a set. For example:
+- (1, 2) * R
+- (1, 2, 3) * N^2
+- Q + (1, 3)
+Are all invalid.
 
 
 
