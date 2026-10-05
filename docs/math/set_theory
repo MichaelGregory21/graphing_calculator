@@ -1,1 +1,107 @@
+# Set Theory
+
+Sets are first-class mathematical values in the language. They are not metadata attached to expressions and are not represented by a separate domain system.
+
+Restrictions, discrete domains, Cartesian products, and reusable collections of values are all expressed using sets.
+
+---
+
+## 1. Set Construction
+
+### Built-in Sets
+
+The system provides the following predefined sets:
+- `N`, The set of natural numbers
+- `Z`, The set of integers
+- `Q`, The set of rational numbers
+- `R`, The set of real numbers
+
+### Finite Sets
+
+Finite sets use braces with comma-separated elements:
+
+`{1, 2, 3, 4}`
+
+The empty set `{}` or `empty` which renders as `∅`.
+
+Sets are unordered and do not contain duplicate elements:
+
+`{1,2,3}={3,2,1}={3,2,1,1}`
+
+### Set Builder Notation
+The general form is 
+
+`{x in A : P(X)}`
+
+where `x` is a local set-builder variable, `A` is the source set, and `P(x)` is a Boolean condition on `x`. This gives the set of elements in `A` that satisfy `P`, i.e., where `P` is true. 
+
+For example:
+
+`{x in R : x^2 > 10}`
+
+is the set of real numbers whose square is greater than 10. Note that the source set may be omitted and by default, this role is played by R:
+
+`{x < 0}`.
+
+is equivalent to
+
+`{x in R : x < 0}`.
+
+### Ellipses
+Ellipses may describe recognizable sequences:
+`{2, 4, 6, ...}`.
+
+The system does not attempt arbitrary sequence inference. If the continuation connot be determined easily by a fixed collection of built-in patterns, then the expression will remain unresolved.
+
+## 2. Set Operations
+
+The following are the built in set operations:
+- `A cup B`, the set of elements in `A`, `B`, or both `A` and `B`
+- `A cap B`, the set of elements in both `A` and `B`
+- `A - B`, the set of elements in `A` but not in `B`
+
+The keywords `cup` and `cap` are rendered as `∪` and `∩`, respectively.
+
+## 3. Membership
+Membership is an ordinary Boolean expression:
+
+For example:
+
+`2 in {1, 2, 3}`
+
+is true, but the following are false:
+
+- `2 in {0, 1}` 
+- `2.5 in N`
+- `10 in {}`
+
+## 4. Named Sets
+Sets may be assigned names:
+
+`A = {1, 2, 3}`.
+
+These names map be reused:
+
+`x^2 if x in A`.
+
+## 5. Cartesian Products
+Catesian product of sets can be denoted by `*` or by juxtaposition.
+
+`A * B` and `AB`
+
+represent the set of pairs `(a, b)` where `a in A` and `b in B`. For example
+`{1, 2} * {3, 4} = {(1,3), (1,4), (2,3), (2,4)}`
+
+The Cartesian power is defined on natural numbers inductively:
+- `A^0 = {}`
+- `A^n = A * A^{n+1}`
+
+Sets can also have real scalar products, generally denoted nA. For example:
+- `3{1, 2, 3} = {3, 6, 9}`
+- `2Z = {x in Z : x/2 in Z}` (The set of even integers)
+
+
+
+
+
 
