@@ -45,7 +45,9 @@ Numeric literals are values, not functions.
 
 Supported arithmetic operators include:
 
-$$+   -   *   /   ^$$
+$$
++   -   *   /   ^
+$$
 
 Standard mathematical precedence applies.
 
