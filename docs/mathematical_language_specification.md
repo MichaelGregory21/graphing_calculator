@@ -421,8 +421,8 @@ x^2 if x in {x in R : x < 0}
 
 A named set may also be used:
 
-A = {x in R : x < 0}
-x^2 if x in A
+ - A = {x in R : x < 0}
+ - x^2 if x in A
 
 Conditional expressions are ordinary expression-tree constructs rather than editor metadata.
 
