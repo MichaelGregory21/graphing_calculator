@@ -173,26 +173,6 @@ is equivalent to:
 
 {x in R : x < 0}
 
-The braces may be omitted for this simple form:
-
-x < 0
-
-is interpreted as the same mathematical set when a set value is required.
-
-The distinction between an ordinary inequality and a set expression is determined by context.
-
-Braces are required when a set is being explicitly defined by name.
-
-For example:
-
-A = {x < 0}
-
-is valid, while:
-
-A = x < 0
-
-is invalid because the latter is an ordinary Boolean expression rather than an explicit set definition.
-
 ### Set Membership
 
 Membership uses `in`:
