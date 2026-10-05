@@ -98,6 +98,8 @@ Examples:
  - f(x) = x^2
  - g(x, a) = x^2 + a
 
+Functions of n-many variables take n-tuples are component-wise arguments. For example, `f(a,b,c) = a * b * c` is defined on `R^3`
+
 ## Angle Modes
 
 Trigonometric functions use one of three global angle modes:
