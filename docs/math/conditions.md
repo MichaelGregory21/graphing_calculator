@@ -1,6 +1,6 @@
 # Conditions
 
-A condition is formally a pair of expressions, called *components* separated by a relation symbol which holds a true or false value determined by the value of its components. Conditions are used to specify elements in a set and to determine a portion of a piecewise-defined function.
+A condition is formally a pair of expressions, called *components* separated by a relation symbol which holds a true or false value determined by the value of its components. Conditions fulfill two purposes, namely, restricting the elements in a set using set-builder notation, and restricting the domain of a function. In either case, the restriction is to those elements which satisfy the condition when plugged into the condition as a free variable.
 
 Equality, inequality, and membership are the three types conditions in this project.
 
@@ -20,7 +20,17 @@ These relation symbols separate expressions called *components*. For example:
 
 We can specify the components as *left* and *right* components. Note that the second example is `false` while the first and third examples depend on the values for `x` and `a`, respectively.
 
-A relation symbol must separate expressions. A list of 2 or more expressions is often acceptable. In this case, the entire condition is `true` only if each condition is pairwise `true`. For example:
+### Syntax
+
+A relation symbol preceding a separator is an expression and does *not* determine a condition. For example, 
+`f(x) = x^2 if x < 0`
+
+is defining and plotting the function `f` on the domain of negative real numbers and
+`x < 1 / x if x in Q`
+
+is plotting all points `(x, y) in Q^2` where `x < 1 / x`.
+
+A relation symbol must separate conditions. A list of 2 or more expressions is often acceptable. In this case, the entire condition is `true` only if each condition is pairwise `true`. For example:
 - `{1, 2, 3} = {3, 2, 1} = {3, 2, 1, 1}`
 - `2 < 4 = 2 + 2`
 - `18 = 9 * 2 = 3 * 3 * 2`
@@ -41,11 +51,6 @@ Equality is the most basic relation which evaluates to `true` only when both com
 - `(1, 2) = (0 + 1, 1 + 1)`
 - `Z = N cup -N` -> `true`
 
-Equality preceding a separator is used to denote definition, *not* a condition. For example:
-`f(x)=x^2 if x = 4`.
-
-In this case, the first equality defines `f(x)=x^2` and the second equality defines a domain of `{4}`.
-
 ### Inequality
 
 Inequality is a relation defined only on numbers. In particular, inequality is not defined on sets or tuples. The four built-in inequalities are:
@@ -57,6 +62,8 @@ Inequality is a relation defined only on numbers. In particular, inequality is n
 Note that `<=` is rendered as `≤` and `>=` is rendered as `≥`.
 
 `inf` is defined by `a < inf` and `-inf < a` for all numbers `a`.
+
+A set who elements are restricted by an inequality may plot a shaded region.
 
 ### Membership
 
@@ -97,7 +104,7 @@ The conjunction and disjunction connectives join conditions to create new condit
 
 For example: `2 = 1 + 1 and 3 < 2` and `2 - 1 = 0 or 3.14 in N` are both `false` while `-2 in Z - N and 3 * 3 = 9` and `4 - 0 = 5 or (1, 2) = (3 - 2, 2)` are both `true`.
 
-## Negation
+### Negation
 
 The negation connective takes a single condition and creates a new condition that holds `true` or `false` value according to the following rule:
 `not P` is `true` if and only if `P` is false
@@ -111,6 +118,19 @@ Parentheses may be used to define specific ordering on connectives or make condi
 
 ## 3. Free Variables
 
+Free variables are unknown values in a condition and their value may determine the value of a condition. For example, `x in 2N` is `true` only when `x` is an even, non-negative number. It is worth noting that, without free variables, conditions are largely useless as a concept within this project as they would otherwise form tautologies or contradictions everywhere. On the contrary, free variables allow the value of the condition to vary over a particular range of elements.
+
+### Dependent Variable
+A free variable may be the dependent variable, i.e., `x`, in which case, a resulting expression may attempt to plot all points (if any) that satisfy the given condition. For example: `x^2 if x > 0` plots the right half of a parabola.
+
+### User-Defined Variable
+A free variable may also be a user-defined variable. For example,
+- if the user defines `a = 3`, then `a in 2N + 1` is `true`
+- if the user defines `A = 3Z`, then `8 in A` is `false`
+
+A user defined variable is overwritten by a local instance of a variable of the same name. For example, suppose the user defined `a=3`, previously. Then, the 
+
+Finally, a free variable may be a locally defined variable. 
 
 ## 4. Separators (if, :)
 
