@@ -26,7 +26,7 @@ The empty set `{}` or `empty` which renders as `∅`.
 
 Sets are unordered and do not contain duplicate elements:
 
-`{1,2,3}={3,2,1}={3,2,1,1}`
+`{1, 2, 3}={3, 2, 1}={3, 2, 1, 1}`
 
 ### Set Builder Notation
 The general form is 
