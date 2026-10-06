@@ -1,5 +1,5 @@
 # Conditions
-A condition is a defined rule by which a set can be defined or the domain of a function can be specified. A condition evaluates to one of `true`, `false`, or `unknown` once values are substituted for its free variables. They are defined inductively as follows:
+A condition is a defined rule by which a set can be defined or the domain of a function can be specified which comes equipped with a *number of free variables* component calculated upon definition. A condition evaluates to one of `true`, `false`, or `unknown` once values are substituted for its free variables. They are defined inductively as follows:
 - If `f(a_1,...,a_n) and g(b_1,...,b_m)` are expressions and `R` is a relation, then `f(a_1,...,a_n) R g(b_1,...,b_m)` is a condition
 - If `P` and `Q` are conditions, then `P and Q`, `P or Q`, and `not P` are conditions
 
@@ -29,6 +29,7 @@ When defining a set or restricting a function domain, free variables must be loc
 
 If a free variable is present in the definition of a set or the restriction of a function domain, then an illegal definition error is thrown. For example, `{a in N : a + b < 3}` throws and error if `b` is a free variable in `a + b < 3`.
 
+The number of free variables in a condition is calculated and store upon the creation of the condition. If the system fails to calculate the number of variables in a condition, then an run time error is thrown.
 ---
 
 ## 3. Declaring Conditions
