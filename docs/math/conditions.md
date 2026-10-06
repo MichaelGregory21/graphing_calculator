@@ -37,4 +37,8 @@ A condition with no free variables may be evaluated by entering it into an expre
 
 A declaration may be substituted for set definition or function specification. For example, a set may be defined `{a in A : P(a)}`.
 
+---
 
+# Philosophy
+
+Conditions are intentionally restrictive in their capabilities to avoid non-computable functions. In particular, users cannot create conditions using quantifiers. Additionally, the system is built with a fair amount of redundancy in mind. For example, connectives can be replaced with set operations and set membership conditions on user defined sets can always be avoided by carrying conditions through sets. The purpose of these redundancies is the reinforce an elegant system that feels like a true mathematical tool, rather than requiring the user to translate work into a restricted system.
