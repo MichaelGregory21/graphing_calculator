@@ -1,6 +1,7 @@
 # Conditions
 A condition is a defined rule by which a set can be defined or the domain of a function can be specified which comes equipped with a *number of free variables* component calculated upon definition. A condition evaluates to one of `true`, `false`, or `unknown` once values are substituted for its free variables. They are defined inductively as follows:
 - If `f(a_1,...,a_n) and g(b_1,...,b_m)` are expressions and `R` is a relation, then `f(a_1,...,a_n) R g(b_1,...,b_m)` is a condition
+- If `f(a_1,...,a_n)` is an expression and `A` is a set, then `f(x) in A` is a condition
 - If `P` and `Q` are conditions, then `P and Q`, `P or Q`, and `not P` are conditions
 
 ---
