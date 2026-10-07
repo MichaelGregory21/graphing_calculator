@@ -2,6 +2,7 @@
 A condition is a defined rule by which a set can be defined or the domain of a function can be specified which comes equipped with a *number of free variables* component calculated upon definition. A condition evaluates to one of `true`, `false`, or `unknown` once values are substituted for its free variables. They are defined inductively as follows:
 - If `f(a_1,...,a_n)` and `g(b_1,...,b_m)` are expressions and `R` is a relation, then `f(a_1,...,a_n) R g(b_1,...,b_m)` is a condition which holds `true` value for values of `(a_1,...,a_n)` in `A` and `(b_1,...,b_m)` in `B` where `(f(a_1,...,a_n), g(b_1,...,b_m))` is a member of `R`, and `false` for all other values
 - If `f(a_1,...,a_n)` is an expression and `A` is a set, then `f(a_1,...,a_n) in A` is a condition which is `true` for values of `(a_1,...,a_n)` where `f(a_1,...,a_n)` is a member of `A`, and `false` for all other values
+- If `P` is a condition, then so is `(P)`
 - If `P` and `Q` are conditions, then `P and Q`, `P or Q`, and `not P` are conditions
 
 ---
@@ -39,6 +40,10 @@ The number of free variables in a condition is calculated and stored upon the cr
 A condition with no free variables may be evaluated by entering it into an expression box. For example, `2 + 2 = 4` prints `true`. A condition can be declared under a variable name and evaluated later by supplying values for its free variables. Note that this declaration must use the `<-` notation and never use `=`. For example, `P(x, y) <- x + y < 3` is valid but `P(x, y) = x + y < 3` is not valid and will throw a syntax error.
 
 A declaration may be substituted for set definition or function specification. For example, a set may be defined `{a in A : P(a)}`.
+
+---
+
+## 4. Evaluating Conditions
 
 ---
 
