@@ -111,8 +111,6 @@ Examples:
 
 ## 4. Substitution of Free Variables
 
-A definition
-
 When a definition containing free variables is referenced, values may be substituted for those free variables which are assigned according to the order to which they appeared in the definition. For example, given definition `f(x) = x + 2`, `3` may be substituted for `x`, denoted `f(3)` which returns a value of `5`.
 
 Not all free variables are required to be substituted when later referenced. However, these variables remain free in the definition that the appear in. For example, `x` is free in the expression `f(x, 1)` where `f` is a previously defined function.
