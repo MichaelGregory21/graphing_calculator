@@ -52,6 +52,8 @@ As shorthand, the source set clause may be omitted entirely, leaving a set of th
 
 The set condition may *not* reference the set that is being defined. For example, `E={n in N : n = 0 or n - 1 in E}` will throw a definition error.
 
+If the size of the tuple presented is not the same as the dimension of the source set, then a definition error is thrown.
+
 ---
 
 ## 4. Cartesian Products
