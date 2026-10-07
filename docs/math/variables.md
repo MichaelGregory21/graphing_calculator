@@ -1,6 +1,6 @@
 # Variables
 
-Variables are symbols that name mathematical objects called *definitions*. Definitions may take the form of a value, expression, set, condition, function, tuple, or another variable. Some variables have unknown definition which may be substituted later.
+Variables are symbols that name mathematical objects called *definitions*. Definitions may take the form of an expression, set, condition, function, tuple, or another variable. Some variables have unknown definition which may be substituted later.
 
 The system distinguishes between notions global variables, free variables, and bound variables. Understanding these concepts is essential for understanding expressions, conditions, sets, and functions.
 
