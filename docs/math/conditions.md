@@ -1,7 +1,7 @@
 # Conditions
 A condition is a defined rule by which a set can be defined or the domain of a function can be specified which comes equipped with a *number of free variables* component calculated upon definition. A condition evaluates to one of `true`, `false`, or `unknown` once values are substituted for its free variables. They are defined inductively as follows:
-- If `f(a_1,...,a_n) and g(b_1,...,b_m)` are expressions and `R` is a relation, then `f(a_1,...,a_n) R g(b_1,...,b_m)` is a condition
-- If `f(a_1,...,a_n)` is an expression and `A` is a set, then `f(x) in A` is a condition
+- If `f(a_1,...,a_n)` and `g(b_1,...,b_m)` are expressions and `R` is a relation, then `f(a_1,...,a_n) R g(b_1,...,b_m)` is a condition which holds `true` value for values of `(a_1,...,a_n)` in `A` and `(b_1,...,b_m)` in `B` where `(f(a_1,...,a_n), g(b_1,...,b_m))` is a member of `R`, and `false` for all other values
+- If `f(a_1,...,a_n)` is an expression and `A` is a set, then `f(a_1,...,a_n) in A` is a condition which is `true` for values of `(a_1,...,a_n)` where `f(a_1,...,a_n)` is a member of `A`, and `false` for all other values
 - If `P` and `Q` are conditions, then `P and Q`, `P or Q`, and `not P` are conditions
 
 ---
@@ -13,12 +13,12 @@ Connectives are operations on conditions which create new conditions from smalle
 ### Conjunction and Disjunction
 
 The `and` and `or` connectives are binary which create new conditions from a pair of existing conditions according to the following rules:
-- `P and Q` is true if `P` is `true` and `Q` is `true`
-- `P or Q` is true if `P` is `true`, `Q` is `true`, or both `P` and `Q` are `true`.
+- `P and Q` is true if and only if `P` is `true` and `Q` is `true`
+- `P or Q` is true if and only if `P` is `true`, `Q` is `true`, or both `P` and `Q` are `true`.
 
 ## Negation
 
-The `not` connective is unary and creates new conditions from a a single existing condition according to the following rule:
+The `not` connective is unary and creates new conditions from a single existing condition according to the following rule:
 - `not P` is true if `P` is `false`
 
 ---
