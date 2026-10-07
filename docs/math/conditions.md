@@ -30,7 +30,8 @@ When defining a set or restricting a function domain, free variables must be loc
 
 If a free variable is present in the definition of a set or the restriction of a function domain, then an illegal definition error is thrown. For example, `{a in N : a + b < 3}` throws and error if `b` is a free variable in `a + b < 3`.
 
-The number of free variables in a condition is calculated and store upon the creation of the condition. If the system fails to calculate the number of variables in a condition, then an run time error is thrown.
+The number of free variables in a condition is calculated and stored upon the creation of the condition. If the system fails to calculate the number of variables in a condition, then an run time error is thrown.
+
 ---
 
 ## 3. Declaring Conditions
