@@ -2,7 +2,7 @@
 
 An expression represents a real number which depends on zero or more free variables. 
 
-For the sake of defining expressions here, we will introduce some mathematical notation to make our discussion much cleaner; if `H` is an expression or condition, then define `F(H)` to be the mathematical set of free variables in `H`. This notation is not to be used in the UI.
+For the sake of defining expressions here, we will introduce some mathematical notation to make our discussion much cleaner; if `E` is an expression, then define `F(E)` to be the mathematical set of free variables in `E`. This notation is not to be used in the UI.
 
 Expressions are defined inductively as follows
 
