@@ -5,9 +5,10 @@ For the sake of defining conditions here, we will introduce some mathematical no
 
 Conditions are defined inductively as follows:
 - `true` and `false` are conditions with no free variables
+- If `P` is a condition, then so is `(P)` with `F((P)) = F(P)`
 -  If `f` and `g` are expressions and `L` is a relation, then `f L g` is a condition with `F(f L g) = F(f) ∪ F(g)`
 - If `f` is an expression and `A` is a set, then `f in A` is a condition with `F(f in A) = F(f) ∪ F(A)`
-- If `P` is a condition, then so is `(P)` with `F((P)) = F(P)`
+- If `P` is an `n`-ary condition and `f_1,...,f_n` are expressions, then `Q = P(f_1,...,f_n)` is a condition with `F(Q) = F(f_1) ∪ ... ∪ F(f_n)`
 - If `P` and `Q` are conditions, then `P and Q`, `P or Q`, and `not P` are conditions with `F(P and Q) = F(P or Q) = F(P) ∪ F(Q)` and `F(not P) = F(P)`
 
 ---
