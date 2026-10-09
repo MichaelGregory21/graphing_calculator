@@ -1,9 +1,14 @@
 # Conditions
-A condition is a defined rule which evaluates to one of `true`, `false`, or `unknown` once values are substituted for its free variables. Conditions are defined inductively as follows:
-- If `f(a_1,...,a_n)` and `g(b_1,...,b_m)` are expressions and `R` is a relation, then `f(a_1,...,a_n) R g(b_1,...,b_m)` is a condition which holds `true` value for values of `(a_1,...,a_n)` in `A` and `(b_1,...,b_m)` in `B` where `(f(a_1,...,a_n), g(b_1,...,b_m))` is a member of `R`, and `false` for all other values
-- If `f(a_1,...,a_n)` is an expression and `A` is a set, then `f(a_1,...,a_n) in A` is a condition which is `true` for values of `(a_1,...,a_n)` where `f(a_1,...,a_n)` is a member of `A`, and `false` for all other values
-- If `P` is a condition, then so is `(P)`
-- If `P` and `Q` are conditions, then `P and Q`, `P or Q`, and `not P` are conditions
+A condition is a defined rule which evaluates to one of `true`, `false`, or `unknown` once values are substituted for its free variables. 
+
+For the sake of defining conditions here, we will introduce some mathematical notation to make our discussion much cleaner; if `A` is a condition, expression, or set, then define `F(A)` to be the mathematical set of free variables in `P`. This notation is not to be used in the UI.
+
+Conditions are defined inductively as follows:
+- `true` and `false` are conditions with no free variables
+-  If `f` and `g` are expressions and `L` is a relation, then `f L g` is a condition with `F(f L g) = F(f) ∪ F(g)`
+- If `f` is an expression and `A` is a set, then `f in A` is a condition with `F(f in A) = F(f) ∪ F(A)`
+- If `P` is a condition, then so is `(P)` with `F((P)) = F(P)`
+- If `P` and `Q` are conditions, then `P and Q`, `P or Q`, and `not P` are conditions with `F(P and Q) = F(P or Q) = F(P) ∪ F(Q)` and `F(not P) = F(P)`
 
 ---
 
@@ -20,17 +25,12 @@ The `not` connective is unary and creates new conditions from a single existing 
 
 ---
 
-## 3. Declaring Conditions
+## 2. Declaring Conditions
 
-A condition with no free variables may be evaluated by entering it into an expression box. For example, `2 + 2 = 4` prints `true`. A condition can be declared under a variable name and evaluated later by supplying values for its free variables. Note that this declaration must use the `<-` notation and never use `=`. For example, `P(x, y) <- x + y < 3` is valid but `P(x, y) = x + y < 3` is not valid and will throw a syntax error.
-
-A declaration may be substituted for a set condition or function domain restriction. For example, a set may be defined `{a in A : P(a)}` and a function may be defined `f(a) = a if P(a)`.
+A condition with no free variables may be evaluated by entering it into an expression box. For example, `2 + 2 = 4` prints `true`. A condition can be defined by a variable name and evaluated later by supplying values for its free variables. Note that this definition must use the `<-` notation and never use `=`. For example, `P(x, y) <- x + y < 3` is valid but `P(x, y) = x + y < 3` is not valid and will throw a syntax error.
 
 ---
 
-## 4. Evaluating Conditions
-
----
 
 # Philosophy
 
