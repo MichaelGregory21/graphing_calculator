@@ -1,8 +1,8 @@
 # Variables
 
-Variables are symbols that name mathematical objects called *definitions*. Definitions may take the form of an expression, set, condition, tuple, or another variable. Some variables have unknown definition which may be substituted later.
+Variables are symbols that name mathematical objects. These may take the form of an expression, set, condition, tuple, or another variable. 
 
-The system distinguishes between notions global variables, free variables, and bound variables. Understanding these concepts is essential for understanding expressions, conditions, sets, and functions.
+The system distinguishes between notions global variables, free variables, and bound variables.
 
 ---
 
@@ -24,14 +24,7 @@ Outside of the context of a subscript, itself, the letter `e` without a subscrip
 
 ---
 
-## 2. Types of Variables
-
-Every occurrence of a variable belongs to exactly one of the following categories
-- Global Variables
-- Free Variables
-- Bound Variables
-
-### Global Variables
+## 2. Global Variables and Functions
 
 A global variable is a named definition that may be referenced from anywhere after it has been defined. 
 
@@ -45,40 +38,56 @@ Examples:
 
 In these definitions, the names `a`, `A`, `P`, `f`, `b`, and `t` are, respectively, global variables.
 
-For the sake of the discussion around variables, the notations `=` and `<-` are interchangeable when defining global variables and only makes a difference to the graph plotting system and when defining conditions. 
+Global variables may represent expressions, sets, or conditions.
 
-Global variables may represent values, tuples, expressions, sets, conditions, functions, or other system objects.
+Tuples of global variables may be given component-wise definitions and referenced individually later. For example, `(a, b) = (z, 3)` renames the global variable `z` to `a` and assigns `3` to a global variable, called `b`. Later, the values of `a` and `b` may be substituted individually, elsewhere.
 
-The system also provides several built-in global variables. These are:
+If the object a global variable is naming contains any free variables, then the global variable must provide a list all free variables contained in the definition, separated by commas, enclosed by parentheses, and directly after the name of the global variable. Such variables are called *functions*. All other variables are called *constants*. Functions of 1 and 2 free variables are called *unary* and *binary*, repsectively.
+
+Examples:
+- `f(x) = 3`
+- `y = 3`
+- `P(a, b) <- a < b`
+- `A(i) = {(x, z) in N : x + z < i}`
+
+In these examples, `x`, `y`, `a,b`, and `i` are, respectively, free variables. Only the second example is not a function.
+
+Note that a placeholder for a free variable may be present despite not appearing in the object. Such free variables are called *unused*. For example, `f(x) = 3` and `f(x, y, z) = x - z` are both legal. In this case, substituting into the missing free variables has no effect.
+
+### Built-in Constants, Functions, and Operations
+
+The system provides several built-in constants. These are:
 - Independent and Dependent Variables: `x, y`
 - Math Constants: `e, π`
 - Built-In Sets: `N, Z, R`
 
-Tuples of global variables may be given component-wise definitions and referenced individually later. For example, `(a, b) = (z, 3)` renames the global variable `z` to `a` and assigns `3` to a global variable, called `b`. Later, the values of `a` and `b` may be substituted individually, elsewhere.
+An *operation* is a binary function which is required to be presented in *infix* notation. For example, addition is written `x + y`, not `+(x,y)`. The built-in operations are:
+- Addition `+`
+- Subtraction `-`
+- Multiplication `*`
+- Division `/`
+- Exponentiation `^`
 
-### Free Variables
+All other built-in functions are:
+- Trigonometry `sin`, `cos`, `tan`, `csc`, `sec`, `cot`
+- Inverse Trigonometry `asin`, `acos`, `atan`, `acsc`, `asec`, `acot`
+- Logarithm `log`, `ln`
+- Integer Functions `round`, `floor`, `ceil`
+- Min/Max `min`, `max`
+- Square & Cube Roots `sqrt`, `cbrt`
+- Absolute Value `abs`
+
+## 3. Free Variables
 
 A free variable is a placeholder whose value is supplied when a definition is referenced or evaluated.
 
 Unlike global variables, free variables do not have their own definitions. Instead, they are introduced by a surrounding definition.
 
-A definition containing free variables must provide a list all free variables contained in the definition, separated by commas, enclosed by parentheses, and directly after the name of the definition.
-
-Examples:
-- `f(x) = x`
-- `f(y) = 3 if 3 < y`
-- `P(a, b) <- a < b`
-- `A(i) = {(x, z) in N : x + z < i}`
-
-In these examples, `x`, `y`, `a,b`, and `i` are, repsectively, free variables.
-
 A free variable may only appear within a definition that introduces it. For example, `f(x) = x + a` throws a definition error if `a` is not a global variable. Simply `a + b` also throws a definition error if `a` and `b` are not global variables.
 
 Free variables may *not* share the name of their definition. For example, `f(f) = f + 1` throws a definition error.
 
-Note that a placeholder for a free variable may be present despite not appearing in the definition. Such free variables are called *unused*. For example, `f(x) = 3` and `f(x, y, z) = x - z` are both legal. In this case, substituting into the missing free variables has no effect.
-
-### Bound Variables
+## 4. Bound Variables
 
 Bound variables exist only in a comprehension definition of a set.
 
@@ -93,7 +102,7 @@ Bound variables are local to the construct that introduces them and may never be
 
 ---
 
-## 3. Scope
+## 5. Scope
 
 Free variables and bound variables exist only within the definitions that introduce them and may not be referenced elsewhere.
 
@@ -109,9 +118,9 @@ Examples:
 
 ---
 
-## 4. Substitution of Free Variables
+## 6. Substitution of Free Variables
 
-When a definition containing free variables is referenced, values may be substituted for those free variables which are assigned according to the order to which they appeared in the definition. For example, given definition `f(x) = x + 2`, `3` may be substituted for `x`, denoted `f(3)` which returns a value of `5`.
+When a object containing free variables is referenced, values may be substituted for those free variables which are assigned according to the order to which they appeared in the definition of the function. For example, given definition `f(x) = x + 2`, `x` may be substituted for `3`, denoted `f(3)` which returns a value of `5`.
 
 Not all free variables are required to be substituted when later referenced. However, these variables remain free in the definition that the appear in. For example, `x` is free in the expression `f(x, 1)` where `f` is a previously defined function.
 
