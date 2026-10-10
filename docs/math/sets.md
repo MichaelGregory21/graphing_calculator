@@ -1,13 +1,17 @@
 # Sets
 
-A set is an unordered collection which may constitute the graph of a function, form a user-defined relation, act as a domain for a function, or exist as a standalone object. A set comes equipped with a *dimension* component which restricts some set operations to maintain well-definedness. Sets are defined inductively as follows:
-- Built in sets are sets
-- Finite sets where every element is specified and has the same dimension are sets with the same dimension of any of its elements
-- Discrete, infinite sets of dimension 1, defined by a recognizable pattern of integers are sets of dimension 1. Such sequences may be increasing, decreasing, or double sided
-- If `A` is a set of dimension `n` and `P` is a condition, then `{(a_1,...,a_n) in A : P(a_1,...,a_n)}` is a set of dimension `n`
-- If `A` and `B` are sets of dimension `n` and `m`, respectively, then `A*B` is a set of dimension `n+m`
-- If `A` is a set of dimension `n` and `m` is a natural number, then `A^m` is a set of dimension `nm` defined inductively by `A^0=∅` and `A^{m+1}=A*A^m`
-- If `A` and `B` are sets of the same dimension, `n`, then `A cup B`, `A cap B`, and `A - B` are sets which are either `∅`, or also of dimension `n`
+A set is an unordered collection of expressions which may constitute the graph of a function, form a user-defined relation, act as a domain for a function, or exist as a standalone object. A set comes equipped with a *dimension* component which restricts some set operations to maintain well-definedness. Sets may also include free variables which may be later substitutes for values.
+
+For the sake of defining sets here, we will introduce some mathematical notation to make our discussion much cleaner; if `A` is a condition, expression, or set, then define `F(A)` to be the mathematical set of free variables in `P`. This notation is not to be used in the UI.
+
+Sets are defined inductively as follows:
+- Built in sets are sets with no free variables
+- Finite sets `A={a_1,...,a_n}`, where every element is specified and has the same size, are sets with the same dimension of any of its elements and `F(A) = F(a_1) ∪ ... ∪ F(a_n)`
+- Discrete, infinite sets of dimension 1, defined by a recognizable pattern of integers are sets of dimension 1 with no free variables. Such sequences may be increasing, decreasing, or double sided
+- If `A` is a set of dimension `n` and `P` is a condition, then `A={(a_1,...,a_n) in A : P(a_1,...,a_n,b_1,...,b_m)}` is a set of dimension `n` and `F(A) = F(P) \ (F(a_1) ∪ ... ∪ F(a_n))`
+- If `A` and `B` are sets of dimension `n` and `m`, respectively, then `A*B` is a set of dimension `n+m` with `F(A*B) = F(A) ∪ F(B)`
+- If `A` is a set of dimension `n` and `m` is a natural number, then `A^m` is a set of dimension `nm` with `F(A^m)=F(A)`, defined inductively by `A^0=∅` and `A^{m+1}=A*A^m`
+- If `A` and `B` are sets of the same dimension, `n`, then `A cup B`, `A cap B`, and `A - B` are sets which are either `∅`, or also of dimension `n` with `F(A cup B) = F(A cap B) = F(A - B) = F(A) cup F(B)`
 --- 
 
 ## 1. Built-in Sets
