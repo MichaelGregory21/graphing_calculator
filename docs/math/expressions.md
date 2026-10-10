@@ -14,28 +14,8 @@ Expressions are defined inductively as follows
 - If `E_1,...,E_n` are expressions, `G` is an `n`-ary function, then `H = G(E_1,...,E_n)` is an expression with `F(H) = F(E_1) ∪ ... ∪ F(E_n)`
 - If `E` is an expression with `F(E) = {x_1,...,x_n}` and `P(x_1,...,x_n)` is a condition with the same free variables, then `E if P(x_1,...,x_n)` is an expression with the same free variables as `E`
 - If `E_1,...,E_n,E` are expressions and `P_1,...,P_n` are conditions with each `F(E_i) = F(P_i)`, then `G = {E_1 if P_1,..., E_n if P_n, E}` is an expression with `F(G) = F(E_1) ∪ ... ∪ F(E_n) ∪ F(E)`.
-
-Expressions with 0, 1, 2 free variables are called *constants*, *unary*, and *binary* expressions, respectively
-
+- 
 ---
-
-## 1. Built-in Operations and Functions
-
-An operation is a binary function which is required to be presented in *infix* notation. For example, addition is written `x + y`, not `+(x,y)`. The built-in operations are:
-- Addition `+`
-- Subtraction `-`
-- Multiplication `*`
-- Division `/`
-- Exponentiation `^`
-
-The built-in expressions are:
-- Trigonometry `sin`, `cos`, `tan`, `csc`, `sec`, `cot`
-- Inverse Trigonometry `asin`, `acos`, `atan`, `acsc`, `asec`, `acot`
-- Logarithm `log`, `ln`
-- Integer Functions `round`, `floor`, `ceil`
-- Min/Max `min`, `max`
-- Square & Cube Roots `sqrt`, `cbrt`
-- Absolute Value `abs`
 
 ## 2. Piecewise Expressions
 
