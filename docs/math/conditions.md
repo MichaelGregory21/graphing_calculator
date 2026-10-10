@@ -32,6 +32,35 @@ A condition with no free variables may be evaluated by entering it into an expre
 
 ---
 
+## 3. Membership
+
+Membership of an expression `f` in a set `A` is denoted `f in A` which holds `true` value if `f` is a member of `A` and `false`, otherwise
+
+---
+
+## 4. Relations
+
+A relation is an operator on expressions which holds `true` or `false` value. Relations are written with infix notation, e.g. `x < y`.
+
+### Built-in Relations
+
+The built-in relations are
+- `=`
+- `!=`
+- `<`
+- `>`
+- `<=`
+- `>=`
+
+---
+
+### User Defined Relations
+
+Users may define a relation by defining any set of dimension 2. If `L` is a set of dimension `2`, then users may write `f L g` to denote `(f, g) in L`.
+
+For example, the set `E_2 = {(x, y) in Z^2 : (x - y) / 2 in Z}` is the congruence module 2 relations. Now, users may write `x E_2 y` to signify that `x` and `y ` are of the same parity.
+
+---
 
 # Philosophy
 
