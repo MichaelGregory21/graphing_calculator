@@ -60,6 +60,7 @@ The system provides several built-in constants. These are:
 - Independent and Dependent Variables: `x, y`
 - Math Constants: `e, π`
 - Built-In Sets: `N, Z, R`
+- Bounds: `infy, -infty`
 
 An *operation* is a binary function which is required to be presented in *infix* notation. For example, addition is written `x + y`, not `+(x,y)`. The built-in operations are:
 - Addition `+`
