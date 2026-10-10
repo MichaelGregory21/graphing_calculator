@@ -10,7 +10,7 @@ Sets are defined inductively as follows:
 - Discrete, infinite sets of dimension 1, defined by a recognizable pattern of integers are sets of dimension 1 with no free variables. Such sequences may be increasing, decreasing, or double sided
 - If `A` is a set of dimension `n` and `P` is a condition, then `A={(a_1,...,a_n) in A : P(a_1,...,a_n,b_1,...,b_m)}` is a set of dimension `n` and `F(A) = F(P) \ (F(a_1) ∪ ... ∪ F(a_n))`
 - If `A` and `B` are sets of dimension `n` and `m`, respectively, then `A*B` is a set of dimension `n+m` with `F(A*B) = F(A) ∪ F(B)`
-- If `A` is a set of dimension `n` and `m` is a natural number, then `A^m` is a set of dimension `nm` with `F(A^m)=F(A)`, defined inductively by `A^0=∅` and `A^{m+1}=A*A^m`
+- If `A` is a set of dimension `n` and `m` is a positive integer, then `A^m` is a set of dimension `nm` with `F(A^m)=F(A)`, defined inductively by `A^1=A` and `A^{m+1}=A*A^m`
 - If `A` and `B` are sets of the same dimension, `n`, then `A cup B`, `A cap B`, and `A - B` are sets which are either `∅`, or also of dimension `n` with `F(A cup B) = F(A cap B) = F(A - B) = F(A) cup F(B)`
 --- 
 
@@ -68,7 +68,7 @@ Note that for any set `A`, it must be that `A*∅=∅`.
 
 ### Powers
 
-If `n` is a non-negative integer, then the set `A^n` is defined inductively by `A^∅=∅` and `A^{n+1}=A*A^n`. 
+If `n` is a positive integer, then the set `A^n` is defined inductively by `A^1=A` and `A^{n+1}=A*A^n`. 
 
 ---
 
