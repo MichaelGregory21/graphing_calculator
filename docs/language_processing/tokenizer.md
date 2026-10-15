@@ -47,7 +47,6 @@ Numeric literals should retain their original textual representation rather than
 | `NUMBER` | Integer or decimal literal | A numeric literal. |
 | `VARIABLE` | A single ASCII letter, optionally with a subscript | A variable, function name, or constant name defined by the user. |
 | `CONSTANT` | Reserved built-in constant | A predefined mathematical constant. |
-| `EMPTY_SET` | `empty` | The empty set. |
 
 ### 3.2 Built-in Functions
 
@@ -72,6 +71,7 @@ The tokenizer recognizes the function name; the parser and later stages handle i
 | `CONSTANT` | `pi` |
 | `CONSTANT` | `e` |
 | `CONSTANT` | `infty` |
+| `CONSTANT` | `empty` |
 
 The input `-infty` is tokenized as `MINUS` followed by `CONSTANT`, not as a single constant.
 
