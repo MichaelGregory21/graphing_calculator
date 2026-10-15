@@ -1,3 +1,18 @@
+"""
+Tokenizer Prototype
+
+Converts preprocessed mathematical expressions into a list of tokens.
+
+Usage:
+    tokens = tokenize(r"sin(x) + 2")
+
+Returns a list of strings, ending with "END_OF_INPUT".
+Raises ValueError for invalid lexical input.
+
+This is a prototype. It recognizes tokens but does not parse or evaluate
+expressions. See the language specification for the complete syntax.
+"""
+
 FUNCTIONS = {"sin", "cos", "tan",
              "sinh", "cosh", "tanh",
              "csc", "sec", "cot",
