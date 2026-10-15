@@ -191,4 +191,3 @@ def tokenize(source: str) -> list[str]:
     tokens.append("END_OF_INPUT")
     return tokens
 
-print(tokenize(r"\left\{x in R : x > 1\right\}"))
