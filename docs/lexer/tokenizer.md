@@ -1,4 +1,4 @@
-# Tokenizer Specification
+# Tokenizer
 
 ## 1. Purpose and Scope
 
